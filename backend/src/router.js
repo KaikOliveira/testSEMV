@@ -17,8 +17,29 @@ router.post('/adiciona', (req, res) => {
   const servicesClient = new ServicesClient(db);
 
   servicesClient.adiciona(req.body)
-    .then(res.send('Adicionado com sucesso'))
+    .then(res.send('Adicionado com sucesso.'))
     .catch(erro => console.log(erro));
 });
+
+// Ta bugado
+router.put('/edit', (req, res) => {
+  console.log(req.body);
+
+  const servicesClient = new ServicesClient(db);
+
+  servicesClient.atualiza(req.body)
+    .then(res.send('Dados do Client atualizado com sucesso.'))
+    .catch(erro => console.log(erro));
+});
+
+router.delete('/delete/:nome', (req, res) => {
+  const nome = req.params.nome;
+
+  const servicesClient = new ServicesClient(db);
+
+  servicesClient.remove(nome)
+    .then(() => res.status(200).end(res.send('Cliente excuido com sucesso.')))
+    .catch(erro => console.log(erro));
+})
 
 module.exports = router;

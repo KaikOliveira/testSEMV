@@ -4,7 +4,6 @@ class ServiceClient {
       this._db = db;
   }
 
-  //Promise ADICIONAR LIVRO
   adiciona(client){
     return new Promise((resolve, reject) => {
           this._db.run(`
@@ -40,7 +39,7 @@ class ServiceClient {
           )
       });
   }
-  //Promise LISTAR LIVRO
+
   lista(){
       return new Promise ((resolve, reject) => {
           this._db.all(
@@ -56,57 +55,70 @@ class ServiceClient {
       });
       
   }
-  //Promise BUSCAR POR ID Livro
-  buscaPorId(id) {
+
+  
+  buscaPorId(nome) {
       return new Promise((resolve, reject) =>{
           this._db.get(`
-              SELECT * FROM livros WHERE id = ?
+              SELECT * FROM clients WHERE nome = ?
           `, 
-          [id],
-          (erro, livro) => {
+          [nome],
+          (erro, client) => {
               if (erro) {
-                  return reject ('Não foi possivel encontrar o livro !');
+                  return reject ('Não foi possivel encontrar o Client !');
               }
-                  return resolve(livro);
+                  return resolve(client);
              }
           );
       });
   }
-  //Promise Atualiza
-  atualiza(livro) {
+
+  // Ta Bugado
+  atualiza(client) {
       return new Promise ((resolve, reject) => {
           this._db.run(`
-              UPDATE livros SET 
-                  titulo = ?,
-                  preco = ?,
-                  descricao = ?
-              WHERE id = ?
+              UPDATE clientes SET 
+                tipopessoa = ?,
+                cpf_cnpj = ?,
+                nome = ?
+                endereco = ?
+                nro_logradouro = ?
+                bairro = ?
+                cidade = ?
+                uf = ?
+                cep = ?
+              WHERE nome = ?
           `,
               [
-                  livro.titulo,
-                  livro.preco,
-                  livro.descricao,
-                  livro.id
+                client.tipopessoa,
+                client.cpf_cnpj,
+                client.nome,
+                client.endereco,
+                client.nro_logradouro,
+                client.bairro,
+                client.cidade,
+                client.uf,
+                client.cep,
+                
               ],
              erro  => {
                   if (erro) {
-                      return reject ('Não foi possivel atualizar o livro!');
+                      return reject ('Não foi possivel atualizar os dados do Client!');
                   }
                   resolve();
           });
       });
   }
 
-  //Promise Remove Livro por ID
-  remove(id) {
+  remove(nome) {
       return new Promise ((resolve, reject) => {
           this._db.get(`
-              DELETE FROM livros WHERE id = ?
+              DELETE FROM clients WHERE nome = ?
           `,
-              [id],
+              [nome],
               (erro) => {
                   if (erro) {
-                      return reject ('Nao foi possivel remover o Livro!');
+                      return reject ('Nao foi possivel remover o Cliente!');
                   }
                   return resolve();
               }
