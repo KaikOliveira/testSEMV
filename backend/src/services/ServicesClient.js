@@ -110,12 +110,12 @@ class ServiceClient {
       });
   }
 
-  remove(nome) {
+  remove(id) {
       return new Promise ((resolve, reject) => {
           this._db.get(`
-              DELETE FROM clients WHERE nome = ?
+              DELETE FROM clients WHERE id = ?
           `,
-              [nome],
+              [id],
               (erro) => {
                   if (erro) {
                       return reject ('Nao foi possivel remover o Cliente!');

@@ -33,11 +33,11 @@ router.put('/edit', (req, res) => {
 });
 
 router.delete('/delete/:nome', (req, res) => {
-  const nome = req.params.nome;
+  const id = req.params.id;
 
   const servicesClient = new ServicesClient(db);
 
-  servicesClient.remove(nome)
+  servicesClient.remove(id)
     .then(() => res.status(200).end(res.send('Cliente excuido com sucesso.')))
     .catch(erro => console.log(erro));
 })
