@@ -8,7 +8,7 @@ router.get('/listar', (req, res) => {
   const servicesClient = new ServicesClient(db);
 
   servicesClient.lista()
-    .then(client => res.json(client));
+    .then((client) => res.json(client));
 });
 
 router.post('/adiciona', (req, res) => {
@@ -18,7 +18,7 @@ router.post('/adiciona', (req, res) => {
 
   servicesClient.adiciona(req.body)
     .then(res.send('Adicionado com sucesso.'))
-    .catch(erro => console.log(erro));
+    .catch((erro) => console.log(erro));
 });
 
 // Ta bugado
@@ -29,17 +29,17 @@ router.put('/edit', (req, res) => {
 
   servicesClient.atualiza(req.body)
     .then(res.send('Dados do Client atualizado com sucesso.'))
-    .catch(erro => console.log(erro));
+    .catch((erro) => console.log(erro));
 });
 
 router.delete('/delete/:nome', (req, res) => {
-  const id = req.params.id;
+  const { id } = req.params;
 
   const servicesClient = new ServicesClient(db);
 
   servicesClient.remove(id)
     .then(() => res.status(200).end(res.send('Cliente excuido com sucesso.')))
-    .catch(erro => console.log(erro));
-})
+    .catch((erro) => console.log(erro));
+});
 
 module.exports = router;

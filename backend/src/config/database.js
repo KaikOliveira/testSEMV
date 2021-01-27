@@ -1,4 +1,5 @@
 const sqlite3 = require('sqlite3').verbose();
+
 const bd = new sqlite3.Database('data.db');
 
 const CLIENTES_SCHEMA = `
@@ -16,8 +17,7 @@ CREATE TABLE IF NOT EXISTS clientes (
 )
 `;
 
-const INSERIR_CLIENTE_1 = 
-`
+const INSERIR_CLIENTE_1 = `
 INSERT INTO clientes (
   tipopessoa,
   cpf_cnpj,
@@ -31,47 +31,42 @@ INSERT INTO clientes (
 ) SELECT 1, '457.505.742-02', 'Kaik Oliveira', 'Av Brasil', 'n40', 'Centro', 'Quata', 'SP', '12345678' WHERE NOT EXISTS (SELECT * FROM clientes WHERE nome = 'Kaik Oliveira')
 `;
 
-const TIPO_PESSOA_SCHEMA = 
-`
+const TIPO_PESSOA_SCHEMA = `
 CREATE TABLE IF NOT EXISTS tipo_pessoa (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     descricao VARCHAR(30) NOT NULL
 )
 `;
 
-const INSERIR_TIPO_PESSOA_FISICA = 
-`
+const INSERIR_TIPO_PESSOA_FISICA = `
 INSERT INTO tipo_pessoa (
     descricao
 ) SELECT 'Pessoa Fisica' WHERE NOT EXISTS (SELECT * FROM tipo_pessoa WHERE descricao = 'Pessoa Fisica')
 `;
 
-const INSERIR_TIPO_PESSOA_JURIDICA = 
-`
+const INSERIR_TIPO_PESSOA_JURIDICA = `
 INSERT INTO tipo_pessoa (
     descricao
 ) SELECT 'Pessoa Juridica' WHERE NOT EXISTS (SELECT * FROM tipo_pessoa WHERE descricao = 'Pessoa Juridica')
 `;
 
 bd.serialize(() => {
-    bd.run("PRAGMA foreign_keys=ON");
-    bd.run(CLIENTES_SCHEMA);
-    bd.run(INSERIR_CLIENTE_1);
-    bd.run(TIPO_PESSOA_SCHEMA);
-    bd.run(INSERIR_TIPO_PESSOA_FISICA);
-    bd.run(INSERIR_TIPO_PESSOA_JURIDICA);
+  bd.run('PRAGMA foreign_keys=ON');
+  bd.run(CLIENTES_SCHEMA);
+  bd.run(INSERIR_CLIENTE_1);
+  bd.run(TIPO_PESSOA_SCHEMA);
+  bd.run(INSERIR_TIPO_PESSOA_FISICA);
+  bd.run(INSERIR_TIPO_PESSOA_JURIDICA);
 
-    bd.each("SELECT * FROM clientes", (err, client) => {
-        console.log('Cliente: ');
-        console.log(client);
-    });
+  bd.each('SELECT * FROM clientes', (err, client) => {
+    console.log('Cliente: ');
+    console.log(client);
+  });
 });
 
-process.on('SIGINT', () =>
-    bd.close(() => {
-        console.log('BD encerrado!');
-        process.exit(0);
-    })
-);
+process.on('SIGINT', () => bd.close(() => {
+  console.log('BD encerrado!');
+  process.exit(0);
+}));
 
 module.exports = bd;
