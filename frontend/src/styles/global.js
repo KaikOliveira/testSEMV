@@ -11,6 +11,8 @@ export default createGlobalStyle`
     background: #EcEcEc;
     color: #222;
     -webkit-font-smoothing: antialiased;
+    max-width: 100vw;
+    max-height: 100vh;
   }
   body, input, button {
     font-family: 'Roboto Slab', serif;

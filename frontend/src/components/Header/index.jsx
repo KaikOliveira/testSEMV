@@ -1,19 +1,21 @@
 import React from 'react';
-import { FiMenu, FiLogOut, FiUser, FiSlack } from 'react-icons/fi';
-import { Link } from "react-router-dom";
+import {
+  FiMenu, FiLogOut, FiUser, FiSlack,
+} from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
-import { 
-  ContainerHeader, 
-  Logo, 
-  Content, 
-  LineTop, 
-  BoxLeft, 
+import {
+  ContainerHeader,
+  Logo,
+  Content,
+  LineTop,
+  BoxLeft,
   LineBottom,
 } from './styles';
 
 export default function Header() {
-  return(
-    <ContainerHeader> 
+  return (
+    <ContainerHeader>
       <Logo />
 
       <Content>
@@ -39,11 +41,13 @@ export default function Header() {
 
           <div>
             <FiSlack size={14} color="#333" />
-            <p>Desenvolvimento </p> <pre>{'>'}</pre>
-            <Link to="#">Clients do Moddle</Link>
+            <p>Desenvolvimento </p>
+            {' '}
+            <pre>{'>'}</pre>
+            <Link to="/">Clients do Moddle</Link>
           </div>
         </LineBottom>
       </Content>
     </ContainerHeader>
-  )
+  );
 }

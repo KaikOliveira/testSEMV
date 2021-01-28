@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import ListClient from './ListClient/index';
 
 function Routes() {
-  return(
+  return (
     <Switch>
       <Route path="/" exact component={ListClient} />
     </Switch>

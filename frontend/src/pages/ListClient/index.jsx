@@ -2,25 +2,23 @@ import React from 'react';
 
 import Header from '../../components/Header/index';
 
-import { 
-  Wrapper, 
-  ContentContainer, 
+import {
+  Wrapper,
+  ContentContainer,
   Status,
-  SearchContainer
+  SearchContainer,
 } from './styles';
 
 export default function PageList() {
-  return(
+  return (
     <Wrapper>
       <Header />
 
       <ContentContainer>
         <Status />
 
-        <SearchContainer>
-
-        </SearchContainer>
+        <SearchContainer />
       </ContentContainer>
     </Wrapper>
-  )
+  );
 }

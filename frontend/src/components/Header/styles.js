@@ -8,13 +8,13 @@ export const ContainerHeader = styled.div`
   border-bottom: 0.5px solid #E0E0E0;
 `;
 
-export const Logo =  styled.div`
+export const Logo = styled.div`
   width: 15%;
   height: 100%;
   background: aquamarine;
 `;
 
-export const Content =  styled.div`
+export const Content = styled.div`
   width: 85%;
   height: 100%;
   flex-direction: column;
@@ -30,10 +30,9 @@ export const LineTop = styled.div`
   div {
     display: flex;
     align-items: center;
-    margin-left: 10px;  
+    margin-left: 10px;
   }
 `;
-
 
 export const BoxLeft = styled.div`
   width: 25%;
