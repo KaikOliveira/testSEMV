@@ -1,5 +1,6 @@
 import React from 'react';
-import { FiMenu, FiLogOut, FiUser } from 'react-icons/fi';
+import { FiMenu, FiLogOut, FiUser, FiSlack } from 'react-icons/fi';
+import { Link } from "react-router-dom";
 
 
 import { 
@@ -11,7 +12,10 @@ import {
   BoxLeft, 
   Admin, 
   Quit,
-  BoxLeftLabel
+  BoxLeftLabel,
+  LineBottom,
+  Title,
+  BoxNav
 } from './styles';
 
 export default function Header() {
@@ -36,6 +40,16 @@ export default function Header() {
             </Quit>
           </BoxLeft>
         </LineTop>
+
+        <LineBottom>
+          <h1>Clientes do Moddle</h1>
+
+          <BoxNav>
+            <FiSlack size={14} color="#333" />
+            <p>Desenvolvimento </p> <pre>{'>'}</pre>
+            <Link to="#">Clients do Moddle</Link>
+          </BoxNav>
+        </LineBottom>
       </Content>
     </ContainerHeader>
   )

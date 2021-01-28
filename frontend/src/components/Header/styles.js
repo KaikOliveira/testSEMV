@@ -3,9 +3,9 @@ import styled from 'styled-components';
 export const ContainerHeader = styled.div`
   display: flex;
   flex: 1;
-  background: coral;
   height: 100px;
   justify-content: space-between;
+  border-bottom: 0.5px solid #E0E0E0;
 `;
 
 export const Logo =  styled.div`
@@ -17,12 +17,11 @@ export const Logo =  styled.div`
 export const Content =  styled.div`
   width: 85%;
   height: 100%;
-  background: aliceblue;
   flex-direction: column;
 `;
 
 export const LineTop = styled.div`
-  background: aqua;
+  background: #1976D2;
   width: 100%;
   height: 50%;
   display: flex;
@@ -36,7 +35,6 @@ export const Menu = styled.div`
 `;
 
 export const BoxLeft = styled.div`
-  background: #c54040;
   width: 25%;
   display: flex;
   flex-direction: row;
@@ -44,7 +42,6 @@ export const BoxLeft = styled.div`
 
 export const Admin = styled.div`
   width: 50%;
-  background: #ff9050;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,7 +49,6 @@ export const Admin = styled.div`
 
 export const Quit = styled.div`
   width: 50%;
-  background: #808080;
   display: flex;
   align-items: center;
   justify-content: center
@@ -65,4 +61,61 @@ export const BoxLeftLabel = styled.p`
   font-size: 16px;
   font-weight: 600;
   margin-top: 5px;
+`;
+
+export const LineBottom = styled.div`
+  background: #FAFAFA;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    font-size: 22px;
+    margin-left: 10px;
+    color: #333;
+  }
+`;
+
+export const BoxNav = styled.div`
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    margin-right: 5px;
+  }
+
+  p {
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    margin-top: 2px;
+    color: #333;
+  }
+
+  pre {
+    margin-left: 5px;
+    color: #666;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+    font-family: Roboto, sans-serif;
+    margin-top: 1px;
+    margin-left: 5px;
+    transition: 1s;
+
+    &:hover {
+      color: #999;
+    }
+  }
 `;
