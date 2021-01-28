@@ -2,20 +2,13 @@ import React from 'react';
 import { FiMenu, FiLogOut, FiUser, FiSlack } from 'react-icons/fi';
 import { Link } from "react-router-dom";
 
-
 import { 
   ContainerHeader, 
   Logo, 
   Content, 
   LineTop, 
-  Menu, 
   BoxLeft, 
-  Admin, 
-  Quit,
-  BoxLeftLabel,
   LineBottom,
-  Title,
-  BoxNav
 } from './styles';
 
 export default function Header() {
@@ -25,30 +18,30 @@ export default function Header() {
 
       <Content>
         <LineTop>
-          <Menu>
+          <div>
             <FiMenu size={28} color="#fff" />
-          </Menu>
+          </div>
 
           <BoxLeft>
-            <Admin>
+            <div>
               <FiUser size={18} color="#fff" />
-              <BoxLeftLabel>admin</BoxLeftLabel>
-            </Admin>
-            <Quit>
+              <p>admin</p>
+            </div>
+            <div>
               <FiLogOut size={18} color="#fff" />
-              <BoxLeftLabel>Sair</BoxLeftLabel>
-            </Quit>
+              <p>Sair</p>
+            </div>
           </BoxLeft>
         </LineTop>
 
         <LineBottom>
           <h1>Clientes do Moddle</h1>
 
-          <BoxNav>
+          <div>
             <FiSlack size={14} color="#333" />
             <p>Desenvolvimento </p> <pre>{'>'}</pre>
             <Link to="#">Clients do Moddle</Link>
-          </BoxNav>
+          </div>
         </LineBottom>
       </Content>
     </ContainerHeader>

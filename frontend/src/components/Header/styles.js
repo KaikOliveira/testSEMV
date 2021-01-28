@@ -26,41 +26,35 @@ export const LineTop = styled.div`
   height: 50%;
   display: flex;
   justify-content: space-between;
+
+  div {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;  
+  }
 `;
 
-export const Menu = styled.div`
-  display: flex;
-  align-items: center;
-  margin-left: 10px;  
-`;
 
 export const BoxLeft = styled.div`
   width: 25%;
   display: flex;
   flex-direction: row;
-`;
 
-export const Admin = styled.div`
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+  div {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-export const Quit = styled.div`
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center
-`;
-
-export const BoxLeftLabel = styled.p`
-  color: #fff;
-  margin-left: 5px;
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  margin-top: 5px;
+    p {
+      color: #fff;
+      margin-left: 5px;
+      font-family: Roboto, sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+  }
 `;
 
 export const LineBottom = styled.div`
@@ -77,45 +71,45 @@ export const LineBottom = styled.div`
     margin-left: 10px;
     color: #333;
   }
-`;
 
-export const BoxNav = styled.div`
-  width: 30%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  div {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
-  svg {
-    margin-right: 5px;
-  }
+    svg {
+      margin-right: 5px;
+    }
 
-  p {
-    font-size: 14px;
-    font-family: Roboto, sans-serif;
-    margin-top: 2px;
-    color: #333;
-  }
+    p {
+      font-size: 14px;
+      font-family: Roboto, sans-serif;
+      margin-top: 2px;
+      color: #333;
+    }
 
-  pre {
-    margin-left: 5px;
-    color: #666;
-    font-size: 14px;
-    font-family: Roboto, sans-serif;
-  }
+    pre {
+      margin-left: 5px;
+      color: #666;
+      font-size: 14px;
+      font-family: Roboto, sans-serif;
+    }
 
-  a {
-    text-decoration: none;
-    color: #666;
-    font-size: 14px;
-    font-family: Roboto, sans-serif;
-    margin-top: 1px;
-    margin-left: 5px;
-    transition: 1s;
+    a {
+      text-decoration: none;
+      color: #666;
+      font-size: 14px;
+      font-family: Roboto, sans-serif;
+      margin-top: 1px;
+      margin-left: 5px;
+      transition: 1s;
 
-    &:hover {
-      color: #999;
+      &:hover {
+        color: #999;
+      }
     }
   }
 `;
