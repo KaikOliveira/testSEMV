@@ -1,4 +1,6 @@
 import React from 'react';
+import { FiMenu, FiLogOut, FiUser } from 'react-icons/fi';
+
 
 import { 
   ContainerHeader, 
@@ -8,7 +10,8 @@ import {
   Menu, 
   BoxLeft, 
   Admin, 
-  Quit 
+  Quit,
+  BoxLeftLabel
 } from './styles';
 
 export default function Header() {
@@ -18,11 +21,19 @@ export default function Header() {
 
       <Content>
         <LineTop>
-          <Menu />
+          <Menu>
+            <FiMenu size={28} color="#fff" />
+          </Menu>
 
           <BoxLeft>
-            <Admin />
-            <Quit />
+            <Admin>
+              <FiUser size={18} color="#fff" />
+              <BoxLeftLabel>admin</BoxLeftLabel>
+            </Admin>
+            <Quit>
+              <FiLogOut size={18} color="#fff" />
+              <BoxLeftLabel>Sair</BoxLeftLabel>
+            </Quit>
           </BoxLeft>
         </LineTop>
       </Content>
