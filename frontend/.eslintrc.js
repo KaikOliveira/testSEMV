@@ -21,5 +21,6 @@ module.exports = {
     'camelcase': 'off',
     'react/jsx-filename-extension': 'off',
     'quote-props': 'off',
+    'import/prefer-default-export': 'off',
   },
 };
