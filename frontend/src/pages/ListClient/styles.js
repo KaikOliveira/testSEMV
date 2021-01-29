@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
 export const ContentContainer = styled.div`
   height: 80%;
   width: 100%;
-  background: coral;
+  background: #fff;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
@@ -18,7 +18,7 @@ export const ContentContainer = styled.div`
 export const Status = styled.div`
   height: 7%;
   width: 33%;
-  background: azure;
+  background: #eeeeee;
   margin-left: 2.5%;
   margin-top: 15px;
   display: flex;
@@ -39,7 +39,7 @@ export const Status = styled.div`
   }
 
   &:hover {
-    background: #ECECEC;
+    background: #bdbdbd;
   }
 `;
 

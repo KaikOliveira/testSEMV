@@ -68,18 +68,23 @@ export const Cancel = styled.button`
   margin-right: 2.5%;
   margin-bottom: 10px;
   transition: background-color 0.2s;
-  flex-direction: row;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  p {
-    color: #fff;
-    margin-bottom: 6px;
-    font-size: 14px;
-  }
 
   &:hover {
     background: ${shade(0.2, '#e53935')};
+  }
+
+  a {
+    text-decoration: none;
+    flex-direction: row;
+    display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      color: #fff;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
   }
 `;

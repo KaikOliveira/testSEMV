@@ -21,6 +21,7 @@ export default function Input({ onChange, placeholder, ...props }) {
       <input
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
+        placeholder={placeholder}
         {...props}
       />
 
