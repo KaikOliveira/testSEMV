@@ -18,6 +18,8 @@ module.exports = {
     'react',
   ],
   rules: {
+    'camelcase': 'off',
     'react/jsx-filename-extension': 'off',
+    'quote-props': 'off',
   },
 };

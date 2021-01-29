@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { IoIosArrowDown } from 'react-icons/io';
 import api from '../../service/api';
 
 import Header from '../../components/Header/index';
@@ -9,8 +10,8 @@ import {
   Status,
   SearchContainer,
   ListClients,
+  SearchHeader,
   List,
-  Name,
   AddressAndContact,
 } from './styles';
 
@@ -28,63 +29,63 @@ export default function PageList() {
       <Header />
 
       <ContentContainer>
-        <Status />
+        <Status>
+          <p>Status</p>
+          <IoIosArrowDown size={20} color="#444" />
+        </Status>
 
         <SearchContainer />
 
         <ListClients>
+          <SearchHeader>
+            <p>ID</p>
+            <p>Tipo de Pessoa</p>
+            <p>CPF / CNPJ</p>
+            <p>Nome</p>
+            <p>CEP</p>
+            <p>UF</p>
+            <p>Cidade</p>
+            <p>Endereço</p>
+            <p>Bairro</p>
+            <p>Numero</p>
+          </SearchHeader>
           {dataClient.map((client) => (
             <List key={client.id}>
-              <Name>{client.nome}</Name>
               <AddressAndContact>
                 <p>
-                  <strong>Tipo de pessoa:</strong>
-                  {' '}
+                  {client.id}
+                </p>
+                <p>
                   {client.tipopessoa}
                 </p>
                 <p>
-                  <strong>Cpf/Cnpj: </strong>
-                  {' '}
                   {client.cpf_cnpj}
                 </p>
                 <p>
-                  <strong>Nome: </strong>
-                  {' '}
                   {client.nome}
                 </p>
                 <p>
-                  <strong>Endereço: </strong>
-                  {' '}
-                  {client.endereco}
+                  {client.cep}
                 </p>
                 <p>
-                  <strong>Numero: </strong>
-                  {' '}
-                  {client.nro_logradouro}
-                </p>
-                <p>
-                  <strong>Bairro: </strong>
-                  {' '}
-                  {client.bairro}
-                </p>
-                <p>
-                  <strong>Cidade: </strong>
-                  {' '}
-                  {client.cidade}
-                </p>
-                <p>
-                  <strong>UF: </strong>
-                  {' '}
                   {client.uf}
                 </p>
                 <p>
-                  <strong>Cep: </strong>
-                  {' '}
-                  {client.cep}
+                  {client.cidade}
+                </p>
+                <p>
+                  {client.endereco}
+                </p>
+                <p>
+                  {client.bairro}
+                </p>
+                <p>
+                  {client.nro_logradouro}
                 </p>
               </AddressAndContact>
             </List>
           ))}
+
         </ListClients>
       </ContentContainer>
     </Wrapper>
