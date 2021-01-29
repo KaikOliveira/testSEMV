@@ -1,4 +1,5 @@
 import React from 'react';
+import { FiSave, FiX } from 'react-icons/fi';
 
 import Header from '../../components/Header/index';
 import InputBase from '../../components/Input/index';
@@ -51,8 +52,14 @@ export default function CreateClient({ ...props }) {
         />
 
         <BoxButton>
-          <Confirm />
-          <Cancel />
+          <Confirm>
+            <FiSave size={20} color="#fff" />
+            <p>Cadastrar</p>
+          </Confirm>
+          <Cancel>
+            <FiX size={20} color="#fff" />
+            <p>Cancelar</p>
+          </Cancel>
         </BoxButton>
 
       </Content>
