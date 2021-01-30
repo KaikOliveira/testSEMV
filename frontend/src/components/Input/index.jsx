@@ -2,7 +2,12 @@ import React, { useState, useCallback } from 'react';
 
 import { Container } from './styles';
 
-export default function Input({ onChange, placeholder, ...props }) {
+export default function Input({
+  onChange,
+  placeholder,
+  value,
+
+}) {
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
 
@@ -22,7 +27,8 @@ export default function Input({ onChange, placeholder, ...props }) {
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
         placeholder={placeholder}
-        {...props}
+        value={value}
+        onChange={onChange}
       />
 
     </Container>
