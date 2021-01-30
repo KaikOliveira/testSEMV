@@ -13,7 +13,7 @@ import {
 export default function CreateClient({ ...props }) {
   const history = useHistory();
 
-  const [tipopessoa, setTipopessoa] = useState(0);
+  const [tipopessoa, setTipopessoa] = useState(1);
   const [cpf_cnpj, setCpf_cnpj] = useState('');
   const [nome, setNome] = useState('');
   const [endereco, setEndereco] = useState('');
@@ -26,19 +26,31 @@ export default function CreateClient({ ...props }) {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    await api.post('adiciona',
-      {
-        tipopessoa,
-        cpf_cnpj,
-        nome,
-        endereco,
-        nro_logradouro,
-        bairro,
-        cidade,
-        uf,
-        cep,
-      });
-    history.push('/');
+    if (!tipopessoa
+      || !cpf_cnpj
+      || !nome
+      || !endereco
+      || !nro_logradouro
+      || !bairro
+      || !cidade
+      || !uf
+      || !cep) {
+      alert('Preencha todos os campos');
+    } else {
+      await api.post('adiciona',
+        {
+          tipopessoa,
+          cpf_cnpj,
+          nome,
+          endereco,
+          nro_logradouro,
+          bairro,
+          cidade,
+          uf,
+          cep,
+        });
+      history.push('/');
+    }
   }
 
   return (
