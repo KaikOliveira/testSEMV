@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IoIosArrowDown } from 'react-icons/io';
+import { IoIosArrowDown, IoIosSearch } from 'react-icons/io';
 import api from '../../service/api';
 
 import Header from '../../components/Header/index';
@@ -16,8 +16,10 @@ import {
   List,
   InfosClient,
   RowTop,
+  RowBottom,
   BoxIdSearch,
   BoxContents,
+  Confirm,
 } from './styles';
 
 export default function PageList() {
@@ -65,6 +67,32 @@ export default function PageList() {
               <Select />
             </BoxContents>
           </RowTop>
+
+          <RowBottom>
+            <BoxIdSearch>
+              <p>Client</p>
+              <InputSearch />
+              <Select />
+            </BoxIdSearch>
+
+            <BoxContents>
+              <p>Curso</p>
+              <InputSearch />
+              <Select />
+            </BoxContents>
+
+            <BoxContents>
+              <p>Status</p>
+              <InputSearch />
+              <Select />
+            </BoxContents>
+
+            <Confirm type="submit">
+              <IoIosSearch size={20} color="#fff" />
+              <p>Buscar</p>
+            </Confirm>
+
+          </RowBottom>
 
         </SearchContainer>
 

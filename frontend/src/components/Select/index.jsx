@@ -6,7 +6,7 @@ import { Container } from './styles';
 export default function SelectInput() {
   return (
     <Container>
-      <IoIosArrowDown size={20} color="#444" />
+      <IoIosArrowDown size={20} color="#666" />
     </Container>
   );
 }
