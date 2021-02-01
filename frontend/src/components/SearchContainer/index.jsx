@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { IoIosSearch } from 'react-icons/io';
 
 import InputSearch from '../InputSearch/index';
@@ -61,8 +62,10 @@ export default function SearchWrapper() {
         </BoxContents>
 
         <Button type="submit">
-          <IoIosSearch size={20} color="#fff" />
-          <p>Buscar</p>
+          <Link to="create">
+            <IoIosSearch size={20} color="#fff" />
+            <p>Buscar</p>
+          </Link>
         </Button>
 
       </RowBottom>

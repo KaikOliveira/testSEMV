@@ -44,7 +44,7 @@ export default function Header() {
             <p>Desenvolvimento </p>
             {' '}
             <pre>{'>'}</pre>
-            <Link to="/create">Clients do Moddle</Link>
+            <Link to="/create">Clientes do Moddle</Link>
           </div>
         </LineBottom>
       </Content>

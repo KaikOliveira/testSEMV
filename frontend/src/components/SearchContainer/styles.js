@@ -55,14 +55,23 @@ export const Button = styled.button`
   margin-right: 3%;
   margin-top: 3%;
 
-  p {
-    color: #fff;
-    margin-bottom: 3px;
-    margin-left: 5px;
-    font-size: 14px;
-  }
-
   &:hover {
     background: ${shade(0.2, '#1976D2')};
+  }
+
+  a {
+    text-decoration: none;
+    flex-direction: row;
+    display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      color: #fff;
+      margin-bottom: 3px;
+      margin-left: 5px;
+      font-size: 14px;
+    }
   }
 `;
