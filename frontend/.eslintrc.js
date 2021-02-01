@@ -24,5 +24,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'no-alert': 'off',
+    'jsx-a11y/control-has-associated-label': 'off',
   },
 };

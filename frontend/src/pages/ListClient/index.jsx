@@ -3,6 +3,8 @@ import { IoIosArrowDown } from 'react-icons/io';
 import api from '../../service/api';
 
 import Header from '../../components/Header/index';
+import InputSearch from '../../components/InputSearch/index';
+import Select from '../../components/Select/index';
 
 import {
   Wrapper,
@@ -12,7 +14,10 @@ import {
   ListClients,
   SearchHeader,
   List,
-  AddressAndContact,
+  InfosClient,
+  RowTop,
+  BoxIdSearch,
+  BoxContents,
 } from './styles';
 
 export default function PageList() {
@@ -34,7 +39,34 @@ export default function PageList() {
           <IoIosArrowDown size={20} color="#444" />
         </Status>
 
-        <SearchContainer />
+        <SearchContainer>
+
+          <RowTop>
+            <BoxIdSearch>
+              <p>Código</p>
+              <InputSearch />
+            </BoxIdSearch>
+
+            <BoxContents>
+              <p>Nome</p>
+              <InputSearch />
+              <Select />
+            </BoxContents>
+
+            <BoxContents>
+              <p>E-mail</p>
+              <InputSearch />
+              <Select />
+            </BoxContents>
+
+            <BoxContents>
+              <p>Senha</p>
+              <InputSearch />
+              <Select />
+            </BoxContents>
+          </RowTop>
+
+        </SearchContainer>
 
         <ListClients>
           <SearchHeader>
@@ -51,7 +83,7 @@ export default function PageList() {
           </SearchHeader>
           {dataClient.map((client) => (
             <List key={client.id}>
-              <AddressAndContact>
+              <InfosClient>
                 <p>
                   {client.id}
                 </p>
@@ -82,7 +114,7 @@ export default function PageList() {
                 <p>
                   {client.nro_logradouro}
                 </p>
-              </AddressAndContact>
+              </InfosClient>
             </List>
           ))}
 

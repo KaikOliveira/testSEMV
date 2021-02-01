@@ -2,11 +2,10 @@ import React, { useState, useCallback } from 'react';
 
 import { Container } from './styles';
 
-export default function Input({
+export default function InputSearch({
   onChange,
   placeholder,
   value,
-
 }) {
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);

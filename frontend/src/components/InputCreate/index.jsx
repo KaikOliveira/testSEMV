@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 
 import { Container } from './styles';
 
-export default function Input({
+export default function InputCreate({
   onChange,
   placeholder,
   value,

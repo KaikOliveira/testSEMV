@@ -3,13 +3,12 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   background: #fff;
   height: 28px;
-  width: 60%;
+  width: 95%;
   border: 2px solid #ccc;
   border-radius: 4px;
   color: #333;
   display: flex;
   align-items: center;
-  padding-left: 5px;
   font-size: 16px;
   transition: border-color 0.1s;
 

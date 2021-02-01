@@ -4,7 +4,7 @@ import { FiSave, FiX } from 'react-icons/fi';
 import api from '../../service/api';
 
 import Header from '../../components/Header/index';
-import InputBase from '../../components/Input/index';
+import InputBase from '../../components/InputCreate/index';
 
 import {
   Wrapper, Content, BoxButton, Confirm, Cancel,
@@ -49,6 +49,7 @@ export default function CreateClient({ ...props }) {
           uf,
           cep,
         });
+      alert('Cliente adicionado com sucesso.');
       history.push('/');
     }
   }

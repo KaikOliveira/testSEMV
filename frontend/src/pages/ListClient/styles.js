@@ -89,7 +89,7 @@ export const List = styled.li`
   background: #fff;
 `;
 
-export const AddressAndContact = styled.div`
+export const InfosClient = styled.div`
   display: flex;
   flex-direction: row;
   transition: background-color 0.3s;
@@ -107,4 +107,24 @@ export const AddressAndContact = styled.div`
     font-weight: 500;
     border-right: 1px solid #ccc;
   }
+`;
+
+export const RowTop = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: coral;
+  height: 40%;
+`;
+
+export const BoxIdSearch = styled.div`
+  width: 24%;
+  background: rebeccapurple;
+  margin-left: 20px;
+`;
+
+export const BoxContents = styled.div`
+  width: 24%;
+  background: yellowgreen;
+  flex-direction: column;
 `;
