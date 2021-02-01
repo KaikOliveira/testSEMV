@@ -11,7 +11,7 @@ export const ContainerHeader = styled.div`
 export const Logo = styled.div`
   width: 15%;
   height: 100%;
-  background: aquamarine;
+  background: #7FFFD4;
 `;
 
 export const Content = styled.div`

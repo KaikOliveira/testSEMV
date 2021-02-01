@@ -1,25 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { IoIosArrowDown, IoIosSearch } from 'react-icons/io';
+import { IoIosArrowDown } from 'react-icons/io';
 import api from '../../service/api';
 
 import Header from '../../components/Header/index';
-import InputSearch from '../../components/InputSearch/index';
-import Select from '../../components/Select/index';
+import SearchWrapper from '../../components/SearchContainer/index';
 
 import {
   Wrapper,
   ContentContainer,
   Status,
-  SearchContainer,
   ListClients,
   SearchHeader,
   List,
   InfosClient,
-  RowTop,
-  RowBottom,
-  BoxIdSearch,
-  BoxContents,
-  Confirm,
 } from './styles';
 
 export default function PageList() {
@@ -41,60 +34,7 @@ export default function PageList() {
           <IoIosArrowDown size={20} color="#444" />
         </Status>
 
-        <SearchContainer>
-
-          <RowTop>
-            <BoxIdSearch>
-              <p>Código</p>
-              <InputSearch />
-            </BoxIdSearch>
-
-            <BoxContents>
-              <p>Nome</p>
-              <InputSearch />
-              <Select />
-            </BoxContents>
-
-            <BoxContents>
-              <p>E-mail</p>
-              <InputSearch />
-              <Select />
-            </BoxContents>
-
-            <BoxContents>
-              <p>Senha</p>
-              <InputSearch />
-              <Select />
-            </BoxContents>
-          </RowTop>
-
-          <RowBottom>
-            <BoxIdSearch>
-              <p>Client</p>
-              <InputSearch />
-              <Select />
-            </BoxIdSearch>
-
-            <BoxContents>
-              <p>Curso</p>
-              <InputSearch />
-              <Select />
-            </BoxContents>
-
-            <BoxContents>
-              <p>Status</p>
-              <InputSearch />
-              <Select />
-            </BoxContents>
-
-            <Confirm type="submit">
-              <IoIosSearch size={20} color="#fff" />
-              <p>Buscar</p>
-            </Confirm>
-
-          </RowBottom>
-
-        </SearchContainer>
+        <SearchWrapper />
 
         <ListClients>
           <SearchHeader>

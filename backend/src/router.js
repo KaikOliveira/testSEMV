@@ -21,7 +21,6 @@ router.post('/adiciona', (req, res) => {
     .catch((erro) => console.log(erro));
 });
 
-// Ta bugado
 router.put('/edit', (req, res) => {
   console.log(req.body);
 

@@ -67,11 +67,10 @@ class ServiceClient {
     });
   }
 
-  // Ta Bugado
   atualiza(client) {
     return new Promise((resolve, reject) => {
       this._db.run(`
-              UPDATE clientes SET 
+              UPDATE clientes SET
                 tipopessoa = ?,
                 cpf_cnpj = ?,
                 nome = ?
